@@ -1,0 +1,17 @@
+[
+{
+  "modid": "redcoalcraft",
+  "name": "Red Coal Craft",
+  "description": "",
+  "version": "1.0.0",
+  "mcversion": "1.5.1",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["nxsupert"],
+  "credits": "Nucleon Modding",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
