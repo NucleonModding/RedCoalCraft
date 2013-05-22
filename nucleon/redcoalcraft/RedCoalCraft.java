@@ -2,19 +2,58 @@ package nucleon.redcoalcraft;
 
 
 
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
+import nucleon.redcoalcraft.Regs.RegItems;
 import nucleon.redcoalcraft.common.CommonProxy;
+import nucleon.redcoalcraft.libs.Resources;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.PostInit;
+import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(modid = "redcoalcraft", name = "Red Coal Craft", version = "1.0.0")
+@Mod(modid = Resources.MOD_ID, name = "Red Coal Craft", version = "1.0.0")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class RedCoalCraft {
 
-	@Instance("redcoalcraft")
+	@Instance(Resources.MOD_ID)
     public static RedCoalCraft instance;
 	
 	@SidedProxy(clientSide="nucleon.redcoalcraft.client.ClientProxy", serverSide="nucleon.redcoalcraft.common.CommonProxy")
 	public static CommonProxy proxy;
+	
+	
+	 @PreInit
+	 public void preInit(FMLPreInitializationEvent event) {
+         // Stub Method
+	 }
+ 
+	 @Init
+	 public void load(FMLInitializationEvent event) {
+         RegItems.Register();
+	 }
+ 
+	 @PostInit
+	 public void postInit(FMLPostInitializationEvent event) {
+         // Stub Method
+	 }
+	
+	
+	 
+	 
+	 public static CreativeTabs tabRedCoalCraft = new CreativeTabs("tabRedCoalCraft") {
+           public ItemStack getIconItemStack() {
+                   return new ItemStack(RegItems.rawRedCoal, 1, 0);
+       }
+   };
+	
+	
 }
+
+ 
