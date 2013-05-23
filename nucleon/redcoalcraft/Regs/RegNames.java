@@ -8,8 +8,9 @@ public class RegNames {
 	public static void Register(FMLInitializationEvent event)
 	{
 		LanguageRegistry.addName(RegItems.rawRedCoal, "Raw Red Coal");
-		LanguageRegistry.addName(RegItems.RedCoal, "Red Coal");
-
+		LanguageRegistry.addName(RegItems.redCoal, "Red Coal"); 
+		LanguageRegistry.addName(RegItems.redCoalCapsule, "Red Coal Capsule"); 
+		
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabRedCoalCraft", "en_US", "Red Coal Craft");
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabRedCoalCraft", "en_UK", "Red Coal Craft");
 	}

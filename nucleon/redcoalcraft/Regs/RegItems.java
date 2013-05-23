@@ -9,11 +9,14 @@ import nucleon.redcoalcraft.Item.BaseItem;
 public class RegItems {
 
 	public static Item rawRedCoal;
-	public static Item RedCoal;
+	public static Item redCoal;
+	public static Item redCoalCapsule;
 	public static void Register(FMLInitializationEvent event)
 	{
 		rawRedCoal = new BaseItem(Config.itemIDStartRange + 0 + 0, "rawRedCoal");
-		RedCoal = new BaseItem(Config.itemIDStartRange + 1 + 0, "RedCoal");
+		redCoal = new BaseItem(Config.itemIDStartRange + 1 + 0, "redCoal");
+		redCoalCapsule = new BaseItem(Config.itemIDStartRange + 2 + 0, "redCoalCapsule");
+		
 	}
 
 }

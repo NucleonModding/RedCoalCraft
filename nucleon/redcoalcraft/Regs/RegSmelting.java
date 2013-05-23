@@ -8,7 +8,7 @@ public class RegSmelting {
 	public static void Register(FMLInitializationEvent event)
 	{
 	
-		GameRegistry.addSmelting(RegItems.rawRedCoal.itemID, new ItemStack(RegItems.RedCoal , 8), 0.1f);
+		GameRegistry.addSmelting(RegItems.rawRedCoal.itemID, new ItemStack(RegItems.redCoal , 8), 0.1f);
 		
 	}
 }
