@@ -1,19 +1,18 @@
 package nucleon.redcoalcraft.Regs;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.item.Item;
 import nucleon.redcoalcraft.Item.BaseItem;
 
 
 
-public class RegItems {
+public class RegBlocks {
 
 	public static Item rawRedCoal;
-	public static Item RedCoal;
 	public static void Register(FMLInitializationEvent event)
 	{
-		rawRedCoal = new BaseItem(Config.itemIDStartRange + 0 + 0, "rawRedCoal");
-		RedCoal = new BaseItem(Config.itemIDStartRange + 1 + 0, "RedCoal");
+		rawRedCoal = new BaseItem(5000, "rawRedCoal");
 	}
 
 }

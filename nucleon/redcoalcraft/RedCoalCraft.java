@@ -4,7 +4,11 @@ package nucleon.redcoalcraft;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+import nucleon.redcoalcraft.Regs.RegBlocks;
+import nucleon.redcoalcraft.Regs.RegCrafting;
 import nucleon.redcoalcraft.Regs.RegItems;
+import nucleon.redcoalcraft.Regs.RegNames;
+import nucleon.redcoalcraft.Regs.RegSmelting;
 import nucleon.redcoalcraft.common.CommonProxy;
 import nucleon.redcoalcraft.libs.Resources;
 import cpw.mods.fml.common.Mod;
@@ -36,7 +40,11 @@ public class RedCoalCraft {
  
 	 @Init
 	 public void load(FMLInitializationEvent event) {
-         RegItems.Register();
+         RegBlocks.Register(event);
+		 RegItems.Register(event);
+		 RegNames.Register(event);
+		 RegSmelting.Register(event);
+		 RegCrafting.Register(event);
 	 }
  
 	 @PostInit
