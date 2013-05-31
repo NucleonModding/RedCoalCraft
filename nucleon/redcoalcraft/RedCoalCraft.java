@@ -13,6 +13,7 @@ import nucleon.redcoalcraft.Regs.RegSmelting;
 import nucleon.redcoalcraft.common.CommonProxy;
 import nucleon.redcoalcraft.libs.Resources;
 import nucleon.redcoalcraft.render.CapsuleRenderer;
+import nucleon.redcoalcraft.render.LaserGunRender;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.PostInit;
@@ -50,6 +51,7 @@ public class RedCoalCraft {
 		 RegCrafting.Register(event);
 		 
 		 MinecraftForgeClient.registerItemRenderer(RegItems.redCoalCapsule.itemID, new CapsuleRenderer());
+		 MinecraftForgeClient.registerItemRenderer(RegItems.laserGun.itemID, new LaserGunRender());
 	 }
  
 	 @PostInit

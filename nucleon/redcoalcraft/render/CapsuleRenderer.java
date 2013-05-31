@@ -10,7 +10,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.IItemRenderer;
-import nucleon.redcoalcraft.LazerEffect.LazerEffect;
+import nucleon.redcoalcraft.LazerEffect.LaserEffect;
 
 public class CapsuleRenderer implements IItemRenderer {
 	
@@ -36,9 +36,9 @@ public class CapsuleRenderer implements IItemRenderer {
          renderItem.renderIcon(0, 0, icon, 16, 16);
          
          int itemDamge = itemStack.getItemDamage();
-         int red = LazerEffect.colourRed[itemDamge];
-         int green = LazerEffect.colourGreen[itemDamge];
-         int blue = LazerEffect.colourBlue[itemDamge];
+         int red = LaserEffect.colourRed[itemDamge];
+         int green = LaserEffect.colourGreen[itemDamge];
+         int blue = LaserEffect.colourBlue[itemDamge];
          GL11.glDisable(GL11.GL_TEXTURE_2D);
          GL11.glEnable(GL11.GL_BLEND);
          GL11.glDepthMask(false);
