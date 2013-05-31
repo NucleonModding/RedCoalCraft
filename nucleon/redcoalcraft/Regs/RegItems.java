@@ -3,6 +3,7 @@ package nucleon.redcoalcraft.Regs;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import net.minecraft.item.Item;
 import nucleon.redcoalcraft.Item.BaseItem;
+import nucleon.redcoalcraft.Item.ItemCapsule;
 
 
 
@@ -15,7 +16,7 @@ public class RegItems {
 	{
 		rawRedCoal = new BaseItem(Config.itemIDStartRange + 0 + 0, "rawRedCoal");
 		redCoal = new BaseItem(Config.itemIDStartRange + 1 + 0, "redCoal");
-		redCoalCapsule = new BaseItem(Config.itemIDStartRange + 2 + 0, "redCoalCapsule");
+		redCoalCapsule = new ItemCapsule(Config.itemIDStartRange + 2 + 0, "redCoalCapsule");
 		
 	}
 
