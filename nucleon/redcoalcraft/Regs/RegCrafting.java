@@ -17,6 +17,18 @@ public class RegCrafting {
     	        'r', RegItems.redCoal, 'i', Item.ingotIron, 'g', Item.goldNugget , 'l', Block.thinGlass);
 		
 		
+		
+		GameRegistry.addRecipe(new ItemStack(RegItems.coreLens), "qdq", "ddd", "qdq",
+    	        'q', Item.netherQuartz, 'd', Item.diamond);
+		GameRegistry.addRecipe(new ItemStack(RegItems.directiveLens), "ldl", "ddd", "ldl",
+    	        'l', new ItemStack(Item.dyePowder,1,4), 'd', Item.diamond);
+		GameRegistry.addRecipe(new ItemStack(RegItems.ironFrame,1,0), "i  ", " i ", "  i",
+				'i', Item.ingotIron);
+		GameRegistry.addRecipe(new ItemStack(RegItems.lightEmiter,1,0), "fif", "gli", "fif",
+    	        'f', RegItems.ironFrame, 'i', Item.ingotIron, 'g', Block.glass , 'l', Block.redstoneLampIdle);
+		GameRegistry.addRecipe(new ItemStack(RegItems.laserGun,1,8), "drf", "rcC", "fbl",
+    	        'r', RegItems.redCoal, 'd', RegItems.directiveLens, 'c', RegItems.coreLens , 'b', Block.stoneButton , 'C',RegItems.redCoalCapsule, 'l',RegItems.lightEmiter, 'f',RegItems.ironFrame);
+		
 		// Capsule Crafting
 		
 		GameRegistry.addRecipe(new ItemStack(RegItems.redCoalCapsule,1,1), " r ", " c ", " r ",

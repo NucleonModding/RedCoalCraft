@@ -5,8 +5,10 @@ package nucleon.redcoalcraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.MinecraftForgeClient;
+import nucleon.redcoalcraft.Regs.Config;
 import nucleon.redcoalcraft.Regs.RegBlocks;
 import nucleon.redcoalcraft.Regs.RegCrafting;
+import nucleon.redcoalcraft.Regs.RegEntity;
 import nucleon.redcoalcraft.Regs.RegItems;
 import nucleon.redcoalcraft.Regs.RegNames;
 import nucleon.redcoalcraft.Regs.RegSmelting;
@@ -24,6 +26,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Resources.MOD_ID, name = "Red Coal Craft", version = "1.0.0")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -38,6 +41,7 @@ public class RedCoalCraft {
 	
 	 @PreInit
 	 public void preInit(FMLPreInitializationEvent event) {
+		 Config.Register(event);
          // Stub Method
 	 }
  
@@ -49,6 +53,8 @@ public class RedCoalCraft {
 		 RegNames.Register(event);
 		 RegSmelting.Register(event);
 		 RegCrafting.Register(event);
+		 RegEntity.Register(event);
+		 proxy.RegisterRender();
 		 
 		 MinecraftForgeClient.registerItemRenderer(RegItems.redCoalCapsule.itemID, new CapsuleRenderer());
 		 MinecraftForgeClient.registerItemRenderer(RegItems.laserGun.itemID, new LaserGunRender());
