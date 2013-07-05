@@ -53,10 +53,10 @@ public class ItemLaser extends BaseItem{
                 entityarrow.canBePickedUp = 2;
 
 
-            if (!par2World.isRemote)
-            {
+           // if (!par2World.isRemote)
+           // {
                 par2World.spawnEntityInWorld(entityarrow);
-            }
+           // }
 				
 			
 		}

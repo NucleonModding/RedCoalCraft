@@ -59,9 +59,8 @@ public class RedCoalCraft {
 		 
 		 
 		 EntityRegistry.registerGlobalEntityID(EntityLaser.class, "laser", EntityRegistry.findGlobalUniqueEntityId());
-		 EntityRegistry.registerModEntity(EntityLaser.class, "laser", 0, this, 128, 1, true);
+		 EntityRegistry.registerModEntity(EntityLaser.class, "laser", 342, this, 64, 10, true);
 		
-		 
 		 
 		 
 		 proxy.RegisterRender();
