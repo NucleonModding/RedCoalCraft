@@ -4,7 +4,6 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.entity.projectile.EntitySnowball;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -40,18 +39,24 @@ public class ItemLaser extends BaseItem{
 				//par1ItemStack.setItemDamage(0);
 				par1ItemStack.stackTagCompound.setInteger("laserFuelType", 0);
 			}
+			
+			
+			EntityLaser entityarrow = new EntityLaser(par2World);
 
-
+            
+                entityarrow.setIsCritical(true);
+            
+            
             par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 1.0F, 1.0F);
 
-               
+           
+                entityarrow.canBePickedUp = 2;
 
-            if (!par2World.isRemote)
-            {
-                
-                    par2World.spawnEntityInWorld(new EntityLaser(par2World, par3EntityPlayer));
-                
-            }
+
+           // if (!par2World.isRemote)
+           // {
+                par2World.spawnEntityInWorld(entityarrow);
+           // }
 				
 			
 		}
