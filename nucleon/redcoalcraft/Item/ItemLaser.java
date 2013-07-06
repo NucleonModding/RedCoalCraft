@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
-import nucleon.redcoalcraft.entity.EntityLaserBeem;
+import nucleon.redcoalcraft.entity.EntityLaser;
 
 public class ItemLaser extends BaseItem{
 
@@ -42,15 +42,14 @@ public class ItemLaser extends BaseItem{
 			}
 
 
-          
-			
+            par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 1.0F, 1.0F);
+
                
-			 par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
             if (!par2World.isRemote)
             {
                 
-                    par2World.spawnEntityInWorld(new EntityLaserBeem(par2World, par3EntityPlayer));
+                    par2World.spawnEntityInWorld(new EntityLaser(par2World, par3EntityPlayer));
                 
             }
 				
