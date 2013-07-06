@@ -13,7 +13,6 @@ import nucleon.redcoalcraft.Regs.RegItems;
 import nucleon.redcoalcraft.Regs.RegNames;
 import nucleon.redcoalcraft.Regs.RegSmelting;
 import nucleon.redcoalcraft.common.CommonProxy;
-import nucleon.redcoalcraft.entity.EntityLaser;
 import nucleon.redcoalcraft.libs.Resources;
 import nucleon.redcoalcraft.render.CapsuleRenderer;
 import nucleon.redcoalcraft.render.LaserGunRender;
@@ -57,16 +56,13 @@ public class RedCoalCraft {
 		 RegCrafting.Register(event);
 		 RegEntity.Register(event , this);
 		 
-		 
-		 EntityRegistry.registerGlobalEntityID(EntityLaser.class, "laser", EntityRegistry.findGlobalUniqueEntityId());
-		 EntityRegistry.registerModEntity(EntityLaser.class, "laser", 342, this, 64, 10, true);
+
 		
 		 
 		 
 		 proxy.RegisterRender();
 		 
-		 MinecraftForgeClient.registerItemRenderer(RegItems.redCoalCapsule.itemID, new CapsuleRenderer());
-		 MinecraftForgeClient.registerItemRenderer(RegItems.laserGun.itemID, new LaserGunRender());
+		
 	 }
  
 	 @PostInit
