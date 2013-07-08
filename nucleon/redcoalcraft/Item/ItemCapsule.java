@@ -2,6 +2,7 @@ package nucleon.redcoalcraft.Item;
 
 import java.util.List;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -33,7 +34,6 @@ public class ItemCapsule extends BaseItem{
 			{
 			for( int n = 0; n <= inv.length -1 ; n++)
 			{
-				System.out.println("Looking");
 				if(inv[n] != null)
 				{
 				if(inv[n].itemID == RegItems.laserGun.itemID && !done)
@@ -65,5 +65,15 @@ public class ItemCapsule extends BaseItem{
 		}
 		return par1ItemStack;
     
+    }
+	@Override
+	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List)
+    {
+		for(int damage = 0;damage<512;++damage){
+			if(LaserEffect.lazerEffectList[damage] != null)
+			{
+			par3List.add(new ItemStack(par1, 1, damage));
+			}
+		}
     }
 }

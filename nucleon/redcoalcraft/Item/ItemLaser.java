@@ -4,11 +4,12 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.entity.projectile.EntitySnowball;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
-import nucleon.redcoalcraft.entity.EntityLaser;
+import nucleon.redcoalcraft.entity.EntityLaserBeam;
 
 public class ItemLaser extends BaseItem{
 
@@ -21,19 +22,26 @@ public class ItemLaser extends BaseItem{
 	public void onCreated(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
         if( par1ItemStack.stackTagCompound == null )
             par1ItemStack.setTagCompound( new NBTTagCompound( ) );
-		par1ItemStack.stackTagCompound.setInteger("laserFuelType", 1);
+		par1ItemStack.stackTagCompound.setInteger("laserFuelType", 0);
 	}
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
 		if( par1ItemStack.stackTagCompound == null )
 		{
             par1ItemStack.setTagCompound( new NBTTagCompound( ) );
-            par1ItemStack.stackTagCompound.setInteger("laserFuelType", 1);
+            par1ItemStack.stackTagCompound.setInteger("laserFuelType", 0);
 		}
 		if(par1ItemStack.stackTagCompound.getInteger("laserFuelType") != 0)
 		{
-		System.out.println("right clicked");
 		par1ItemStack.setItemDamage(par1ItemStack.getItemDamage() + 1);
+		
+		
+		if (!par2World.isRemote)
+	     {
+			 par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+			    
+	       par2World.spawnEntityInWorld(new EntityLaserBeam(par2World, par3EntityPlayer,par1ItemStack.stackTagCompound.getInteger("laserFuelType")));
+	     }
 			if(par1ItemStack.getItemDamage() >= 8)
 			{
 				//par1ItemStack.setItemDamage(0);
@@ -41,22 +49,7 @@ public class ItemLaser extends BaseItem{
 			}
 			
 			
-			EntityLaser entityarrow = new EntityLaser(par2World);
-
-            
-                entityarrow.setIsCritical(true);
-            
-            
-            par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 1.0F, 1.0F);
-
-           
-                entityarrow.canBePickedUp = 2;
-
-
-           // if (!par2World.isRemote)
-           // {
-                par2World.spawnEntityInWorld(entityarrow);
-           // }
+			 
 				
 			
 		}

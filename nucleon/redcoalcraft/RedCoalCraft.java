@@ -13,7 +13,6 @@ import nucleon.redcoalcraft.Regs.RegItems;
 import nucleon.redcoalcraft.Regs.RegNames;
 import nucleon.redcoalcraft.Regs.RegSmelting;
 import nucleon.redcoalcraft.common.CommonProxy;
-import nucleon.redcoalcraft.entity.EntityLaser;
 import nucleon.redcoalcraft.libs.Resources;
 import nucleon.redcoalcraft.render.CapsuleRenderer;
 import nucleon.redcoalcraft.render.LaserGunRender;
@@ -30,7 +29,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Resources.MOD_ID, name = "Red Coal Craft", version = "1.0.0")
+@Mod(modid = Resources.MOD_ID, name = "Red Coal Craft", version = "0.1.0.0")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class RedCoalCraft {
 
@@ -58,16 +57,12 @@ public class RedCoalCraft {
 		 RegEntity.Register(event , this);
 		 
 		 
-		 EntityRegistry.registerGlobalEntityID(EntityLaser.class, "laser", EntityRegistry.findGlobalUniqueEntityId());
-		 EntityRegistry.registerModEntity(EntityLaser.class, "laser", 342, this, 64, 10, true);
-		
+		 
 		 
 		 
 		 proxy.RegisterRender();
 		 
-		 MinecraftForgeClient.registerItemRenderer(RegItems.redCoalCapsule.itemID, new CapsuleRenderer());
-		 MinecraftForgeClient.registerItemRenderer(RegItems.laserGun.itemID, new LaserGunRender());
-	 }
+		 }
  
 	 @PostInit
 	 public void postInit(FMLPostInitializationEvent event) {

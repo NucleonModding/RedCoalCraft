@@ -3,7 +3,11 @@ package nucleon.redcoalcraft.LazerEffect;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.util.MovingObjectPosition;
+import nucleon.redcoalcraft.entity.EntityLaserBeam;
+
 public class LaserEffect {
+	
 	
 	
 	public static final LaserEffect[] lazerEffectList = new LaserEffect[512];
@@ -14,7 +18,7 @@ public class LaserEffect {
 	
 	
 	public final int lazerEffectId;
-	public final List<String> lore = new ArrayList();
+	public final List<String> lore = new ArrayList<String>();
 	
 	
 	/**
@@ -22,7 +26,7 @@ public class LaserEffect {
 	 * 
 	 * 
 	 * 
-	 * @param ID - The ID of the Lazer Effect (MUST ME UNIQUE)
+	 * @param ID - The ID of the Lazer Effect (MUST BE UNIQUE)
 	 * @param red - Red colour for rendering
 	 * @param green - Green colour for rendering
 	 * @param blue - Blue colour for rendering
@@ -47,8 +51,14 @@ public class LaserEffect {
 	}
 	
 	
-	
-	
+	public void onImpact(MovingObjectPosition movingobjectposition , EntityLaserBeam laserbeam)
+	{
+		
+	}
+	public float getGravityVelocity()
+	{
+		   return 0;
+	}
 	
 	
 	
@@ -60,5 +70,10 @@ public class LaserEffect {
 	
 	public static final LaserEffect empty = new LaserEffect(0,0,0,0,"Empty");
 	public static final LaserEffect redCoal = new RedCoalLaserEffect(1,255,0,0,"Red Coal");
- 
+	public static final LaserEffect basicDamage = new BasicDamgeEffect(2,100,60,60,"Basic Damage");
+	public static final LaserEffect basicMiniExplosive = new BasicMiniExplosionEffect(3,80,80,80,"Basic Mini Explosion");
+	public static final LaserEffect basicLargeExplosive = new BasicLargeExplosionEffect(4,200,80,80,"Basic Large Explosion");
+	public static final LaserEffect basicVBer = new BasicVBerEffect(5,200,80,100,"Basic VB");
+	public static final LaserEffect eSlab = new ESlabEffect(6,50,80,255,"E-Slab");
+	 
 }

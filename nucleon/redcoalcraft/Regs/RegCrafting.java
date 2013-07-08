@@ -33,5 +33,17 @@ public class RegCrafting {
 		
 		GameRegistry.addRecipe(new ItemStack(RegItems.redCoalCapsule,1,1), " r ", " c ", " r ",
     	        'r', RegItems.redCoal, 'c', RegItems.redCoalCapsule);
+		GameRegistry.addRecipe(new ItemStack(RegItems.redCoalCapsule,1,2), " r ", "rcr", " r ",
+    	        'r', Item.flint, 'c', new ItemStack(RegItems.redCoalCapsule,1,1));
+		GameRegistry.addRecipe(new ItemStack(RegItems.redCoalCapsule,1,3), "rrr", "rcr", "rrr",
+    	        'r', Item.gunpowder, 'c', new ItemStack(RegItems.redCoalCapsule,1,1));
+		GameRegistry.addRecipe(new ItemStack(RegItems.redCoalCapsule,1,4), "rrr", "rcr", "rrr",
+    	        'r', Block.tnt, 'c', new ItemStack(RegItems.redCoalCapsule,1,1));
+		
+		GameRegistry.addRecipe(new ItemStack(RegItems.redCoalCapsule,1,5), "rrr", "rcr", "rrr",
+    	        'r', new ItemStack(Item.beefCooked,2), 'c', new ItemStack(RegItems.redCoalCapsule,1,4));
+		
+		GameRegistry.addRecipe(new ItemStack(RegItems.redCoalCapsule,1,6), "rrr", "rcr", "rrr",
+    	        'r', Block.anvil, 'c', new ItemStack(RegItems.redCoalCapsule,1,4));
 	}
 }
